@@ -47,5 +47,6 @@ Route::middleware(['auth', 'verified'])
                 // tutti i loro url inizino con "admin/"
                 
             Route::get('/', [DashboardController::class, 'index'])->name('index');
+            Route::get('/users', [DashboardController::class, 'users'])->name('users');
         }
 );
