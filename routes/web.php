@@ -35,4 +35,17 @@ require __DIR__.'/auth.php';
 
 
 // rotta pagina amministrazione
-Route::get('/admin', [DashboardController::class, 'index']);
+//Route::get('/admin', [DashboardController::class, 'index'])->middleware('auth');
+
+Route::middleware(['auth', 'verified'])
+        ->name('admin.')
+        ->prefix('admin')
+        ->group(function() {
+            // qui ci metto tutte le rotte che voglio che siano:
+                // raggruppate sotto lo stesso middelware
+                // i loro nomi inizino tutti con "admin.
+                // tutti i loro url inizino con "admin/"
+                
+            Route::get('/', [DashboardController::class, 'index'])->name('index');
+        }
+);
