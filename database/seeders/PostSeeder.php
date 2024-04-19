@@ -7,7 +7,10 @@ use App\Models\Post;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+//importo il faker
 use Faker\Generator as Faker;
+
 
 class PostSeeder extends Seeder
 {
@@ -32,16 +35,18 @@ class PostSeeder extends Seeder
             $newPost->save();
         }; */
         
+        for($i = 0; $i < 10; $i++){
 
-        $newPost = new Post();
-        $newPost->name = "Booleando";
-        $newPost->description = "esercizio simile alla pagina zalando";
-        $newPost->src = "https://i.pinimg.com/564x/40/e7/3b/40e73b247e91b2fe4d2a040b40c9ae86.jpg";
-        $newPost->used_technologies = "html e css";
-        $newPost->link = "https://www.wikipedia.org/";
+            $newPost = new Post();
 
-        // una volta che compiliamo i campi dobbiamo salvare la riga per applicare le modifiche
-        $newPost->save();
+            $newPost->name = $faker->name();
+            $newPost->description = $faker->text();
+            $newPost->src = $faker->imageUrl(640,480,null);
+            $newPost->used_technologies = $faker->words();
+            $newPost->link = $faker->url();
 
+            // una volta che compiliamo i campi dobbiamo salvare la riga per applicare le modifiche
+            $newPost->save();
+        }
     }
 }
