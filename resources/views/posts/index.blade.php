@@ -18,7 +18,7 @@
                 <tr>
 
                 <td>{{$post->name}}</td>
-                <td><a href="" class="btn btn-light ">Visualizza Progetto</a></td>
+                <td><a href="{{ route('post.show', $post->id )}}" class="btn btn-light ">Visualizza Progetto</a></td>
                 
                 </tr>
 
