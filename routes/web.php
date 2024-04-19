@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,6 @@ Route::middleware(['auth', 'verified'])
             Route::get('/users', [DashboardController::class, 'users'])->name('users');
         }
 );
+
+/* Route::get('/', [PostController::class , 'index'])->name('posts.index'); */
+Route::resource('post', PostController::class);

@@ -42,7 +42,7 @@ class PostSeeder extends Seeder
             $newPost->name = $faker->name();
             $newPost->description = $faker->text();
             $newPost->src = $faker->imageUrl(640,480,null);
-            $newPost->used_technologies = $faker->words();
+            $newPost->used_technologies = $faker->word();
             $newPost->link = $faker->url();
 
             // una volta che compiliamo i campi dobbiamo salvare la riga per applicare le modifiche
