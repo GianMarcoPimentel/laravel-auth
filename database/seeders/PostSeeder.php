@@ -21,7 +21,7 @@ class PostSeeder extends Seeder
     {
         //       
         
-       /*  $newPost = new Post();
+        $newPost = new Post();
         
         for($i=0; $i<10; $i++){
             
@@ -33,7 +33,7 @@ class PostSeeder extends Seeder
             
            
             $newPost->save();
-        }; */
+        };
         
         for($i = 0; $i < 10; $i++){
 

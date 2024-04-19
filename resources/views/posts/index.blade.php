@@ -26,5 +26,7 @@
 
         </tbody>
       </table>
+
+      <a href="{{route('post.create')}}" class="btn btn-warning ">Aggiungi Progetto</a>
 </div>
 @endsection
