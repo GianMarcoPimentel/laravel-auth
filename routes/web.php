@@ -53,4 +53,6 @@ Route::middleware(['auth', 'verified'])
 );
 
 /* Route::get('/', [PostController::class , 'index'])->name('posts.index'); */
-Route::resource('post', PostController::class);
+
+
+Route::resource('post', PostController::class)->middleware(['auth']);
