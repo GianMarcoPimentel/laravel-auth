@@ -5,7 +5,7 @@
     <h1>Pagina di amministrazione</h1>
     <h2>Benvenuto {{$user->name}}</h2>
 
-
-    <a href="{{route('admin.posts.create')}}" class="btn btn-info ">Aggiungi un Progetto</a>
+    <a href="{{route('admin.posts.index')}}" class="btn btn-success ">Visualizza tuoi Progetti</a>
+    
 </div>
 @endsection

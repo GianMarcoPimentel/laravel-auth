@@ -24,5 +24,7 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis accusamus dolores!</p>
     </div>
 </div>
-
+<div class="container">
+    <a href="{{route('admin.index')}}" class="btn btn-success">Vai alla pagina di presentazione</a>
+</div>
 @endsection

@@ -6,8 +6,12 @@
     <table class="table">
         <thead>
           <tr>
+            
+            <th scope="col">#</th>
             <th scope="col">Nome del Progetto</th>
             <th scope="col"></th>
+            
+            
             
           </tr>
         </thead>
@@ -17,8 +21,8 @@
                 
                 <tr>
 
-                <td>Progetto nº {{$post->id}}</td>
-
+                <th scope="row">{{$loop->index + 1}}</th>
+                <td>{{$post->name}}</td>
                 <td><a href="{{ route('admin.posts.show', $post->id )}}" class="btn btn-light ">Mostra Progetto</a></td>
 
                 
@@ -30,6 +34,7 @@
         </tbody>
       </table>
 
+      <a href="{{route('admin.posts.create')}}" class="btn btn-info ">Aggiungi un Progetto</a>
       
 </div>
 @endsection

@@ -5,7 +5,7 @@
 
     
 
-    <h1>Progetto nº {{$post->id}}</h1>
+    <h1></h1>
 
     <div class="card" style="width: 100%;">
         <img src="{{asset('storage/' . $post->src)}}" class="card-img-top" alt="Progetto : {{$post->id}}">
