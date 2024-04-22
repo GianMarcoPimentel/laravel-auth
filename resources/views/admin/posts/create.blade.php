@@ -4,7 +4,7 @@
     <div class="container py-5">
         <h1>Aggiungi un nuovo progetto</h1>
     {{--     scrivo il nome della rotta come action e so dal terminale che il metodo della store è POST --}}    
-    <form action="{{ route('admin.posts.store')}}" method="POST">
+    <form action="{{ route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
       {{-- per salvare tutto ciò che ho già scritto di corretto devo usare il metodo old() --}}
 
@@ -40,7 +40,7 @@
         
         <div class="mb-3 ">
           <label class="form-label" for="src">Immagine</label>
-          <input type="text" class="form-control @error('src') is-invalid @enderror" id="src" name=" src" value="{{ old('src') }}">
+          <input type="file" class="form-control @error('src') is-invalid @enderror" id="src" name=" src" value="{{ old('src') }}">
         </div>
         @error('src')
         <div class="alert alert-danger">

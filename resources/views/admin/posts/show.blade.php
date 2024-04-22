@@ -8,7 +8,7 @@
     <h1>Progetto nº {{$post->id}}</h1>
 
     <div class="card" style="width: 100%;">
-        <img src="{{$post->src}}" class="card-img-top" alt="Progetto : {{$post->id}}">
+        <img src="{{asset('storage/' . $post->src)}}" class="card-img-top" alt="Progetto : {{$post->id}}">
         <div class="card-body">
           <h5 class="card-title">Nome progetto: {{$post->name}}</h5>
           <p class="card-text">Di cosa tratta: {{$post->description}}</p>

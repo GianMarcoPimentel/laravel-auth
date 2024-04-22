@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -38,7 +39,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         //
-        /* dd($request); */
+        //dd($request);
          /* $newPost = new Post();
         $newPost->name = $request->name;
         $newPost->description = $request->description;
@@ -47,12 +48,18 @@ class PostController extends Controller
         $newPost->link = $request->link; */
         $request->validated();
 
-        $post = new Post();
+        $newPost = new Post();
 
-        $post->fill($request->all());
+        $newPost->fill($request->all());
        
+        if($request->hasFile('src')) {
 
-        $post->save();
+            //salvo percorso dell'immagina
+            $path = Storage::disk('public')->put('images', $request->src);
+            $newPost->src = $path;
+        }
+
+        $newPost->save();
 
         return redirect()->route('admin.posts.index');
     }
