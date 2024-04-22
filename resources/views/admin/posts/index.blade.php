@@ -18,7 +18,9 @@
                 <tr>
 
                 <td>Progetto nº {{$post->id}}</td>
-                <td><a href="{{ route('admin.post.show', $post->id )}}" class="btn btn-light ">Visualizza Progetto</a></td>
+                <td><a href="{{ route('admin.posts.edit', $post->id )}}" class="btn btn-light ">Modifica Progetto</a></td>
+                <td><a href="{{ route('admin.posts.show', $post->id )}}" class="btn btn-danger  ">Elimina Progetto</a></td>
+                
                 
                 </tr>
 
@@ -27,6 +29,6 @@
         </tbody>
       </table>
 
-      <a href="{{route('admin.post.create')}}" class="btn btn-warning ">Aggiungi Progetto</a>
+      
 </div>
 @endsection

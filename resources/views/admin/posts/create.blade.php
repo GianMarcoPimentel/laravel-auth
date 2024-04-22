@@ -4,7 +4,7 @@
     <div class="container py-5">
         <h1>Aggiungi un nuovo progetto</h1>
     {{--     scrivo il nome della rotta come action e so dal terminale che il metodo della store è POST --}}    
-    <form action="{{ route('admin.post.store')}}" method="POST">
+    <form action="{{ route('admin.posts.store')}}" method="POST">
         @csrf
       {{-- per salvare tutto ciò che ho già scritto di corretto devo usare il metodo old() --}}
 
@@ -20,55 +20,55 @@
           name="name" 
           value="{{ old('name') }}">
         </div>
-        {{-- @error('name')
+        @error('name')
         <div class="alert alert-danger">
           {{$message}}
         </div>
-        @enderror --}}
+        @enderror
 
         
         <div class="mb-3">
           <label for="description" class="form-label">Descrizione</label>
           <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name=" description">{{ old('description') }}</textarea>
         </div>
-       {{--  @error('description')
+        @error('description')
         <div class="alert alert-danger">
           {{$message}}
         </div>
         @enderror
- --}}
+
         
         <div class="mb-3 ">
           <label class="form-label" for="src">Immagine</label>
           <input type="text" class="form-control @error('src') is-invalid @enderror" id="src" name=" src" value="{{ old('src') }}">
         </div>
-       {{--  @error('src')
+        @error('src')
         <div class="alert alert-danger">
           {{$message}}
         </div>
-        @enderror --}}
+        @enderror
 
 
         <div class="mb-3 ">
           <label class="form-label" for="used_technologies">Tecnologie usate</label>
           <input type="text" class="form-control @error('used_technologies') is-invalid @enderror " id="used_technologies" name=" used_technologies" value="{{ old('used_technologies') }}">
         </div>
-        {{-- @error('used_technologies')
+        @error('used_technologies')
         <div class="alert alert-danger">
           {{$message}}
         </div>
-        @enderror --}}
+        @enderror
 
           
         <div class="mb-3 ">
           <label class="form-label" for="link">Link GitHub</label>
           <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name=" link" value="{{ old('link') }}">
         </div>
-       {{--  @error('link')
+        @error('link')
         <div class="alert alert-danger">
           {{$message}}
         </div>
-        @enderror --}}
+        @enderror
 
         <button type="submit" class="btn btn-primary">Aggiungi Progetto</button>
       </form>

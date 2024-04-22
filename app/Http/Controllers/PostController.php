@@ -54,7 +54,7 @@ class PostController extends Controller
         $post->update($request->all());
         $post->save();
 
-        return redirect()->route('admin.post.index');
+        return redirect()->route('admin.posts.index');
     }
 
     /**
@@ -91,9 +91,11 @@ class PostController extends Controller
         $Post->save(); */
         $request->validated();
 
+        $post->update($request->all());
 
-        
         return redirect()->route('admin.posts.show', $post->id);
+        
+        
     }
 
     /**

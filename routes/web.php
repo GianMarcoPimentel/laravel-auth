@@ -50,7 +50,7 @@ Route::middleware(['auth', 'verified'])
             Route::get('/', [DashboardController::class, 'index'])->name('index');
             Route::get('/users', [DashboardController::class, 'users'])->name('users');
 
-            Route::resource('post', PostController::class);
+            Route::resource('posts', PostController::class);
         }
 );
 
