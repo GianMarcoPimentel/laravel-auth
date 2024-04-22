@@ -18,10 +18,11 @@
                 <tr>
 
                 <td>Progetto nº {{$post->id}}</td>
+
                 <td><a href="{{ route('admin.posts.show', $post->id )}}" class="btn btn-light ">Mostra Progetto</a></td>
 
                 
-                
+  
                 </tr>
 
             @endforeach
