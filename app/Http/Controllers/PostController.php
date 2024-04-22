@@ -18,7 +18,7 @@ class PostController extends Controller
 
         //dd($post);
 
-        return view('posts.index', compact('posts')); 
+        return view('admin.posts.index', compact('posts')); 
         /* return('siamo nell index dei post'); */
 
     }
@@ -29,7 +29,7 @@ class PostController extends Controller
     public function create()
     {
         //
-        return view('posts.create');
+        return view('admin.posts.create');
     }
 
     /**
@@ -39,17 +39,22 @@ class PostController extends Controller
     {
         //
         /* dd($request); */
+        $request->validated();
 
-        $newPost = new Post();
+        $post = new Post();
+
+        $post->fill($request->all());
+        /* $newPost = new Post();
         $newPost->name = $request->name;
         $newPost->description = $request->description;
         $newPost->src = $request->src;
         $newPost->used_technologies = $request->used_technologies;
-        $newPost->link = $request->link;
+        $newPost->link = $request->link; */
 
-        $newPost->save();
+        $post->update($request->all());
+        $post->save();
 
-        return redirect()->route('post.index');
+        return redirect()->route('admin.post.index');
     }
 
     /**
@@ -58,7 +63,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
-        return view('posts.show',compact('post'));
+        return view('admin.posts.show',compact('post'));
     }
 
     /**
@@ -67,6 +72,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -75,6 +81,19 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         //
+        /* $Post = new Post();
+        $Post->name = $request->name;
+        $Post->description = $request->description;
+        $Post->src = $request->src;
+        $Post->used_technologies = $request->used_technologies;
+        $Post->link = $request->link;
+
+        $Post->save(); */
+        $request->validated();
+
+
+        
+        return redirect()->route('admin.posts.show', $post->id);
     }
 
     /**

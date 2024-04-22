@@ -4,7 +4,7 @@
     <div class="container py-5">
         <h1>Aggiungi un nuovo progetto</h1>
     {{--     scrivo il nome della rotta come action e so dal terminale che il metodo della store è POST --}}    
-    <form action="{{ route('post.store')}}" method="POST">
+    <form action="{{ route('admin.post.store')}}" method="POST">
         @csrf
       {{-- per salvare tutto ciò che ho già scritto di corretto devo usare il metodo old() --}}
 

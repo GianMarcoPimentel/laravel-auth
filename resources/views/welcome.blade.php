@@ -25,6 +25,6 @@
     </div>
 </div>
 <div class="container">
-    <a href="{{route('post.index')}}" class="btn btn-light">Vai alla pagina dei miei progetti</a>
+    <a href="{{route('admin.post.index')}}" class="btn btn-light">Vai alla pagina dei miei progetti</a>
 </div>
 @endsection
