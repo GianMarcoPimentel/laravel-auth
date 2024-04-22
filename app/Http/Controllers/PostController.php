@@ -39,19 +39,19 @@ class PostController extends Controller
     {
         //
         /* dd($request); */
-        $request->validated();
-
-        $post = new Post();
-
-        $post->fill($request->all());
-        /* $newPost = new Post();
+         /* $newPost = new Post();
         $newPost->name = $request->name;
         $newPost->description = $request->description;
         $newPost->src = $request->src;
         $newPost->used_technologies = $request->used_technologies;
         $newPost->link = $request->link; */
+        $request->validated();
 
-        $post->update($request->all());
+        $post = new Post();
+
+        $post->fill($request->all());
+       
+
         $post->save();
 
         return redirect()->route('admin.posts.index');
@@ -78,7 +78,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(StorePostRequest $request, Post $post)
     {
         //
         /* $Post = new Post();
@@ -103,6 +103,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index');
     }
 }
