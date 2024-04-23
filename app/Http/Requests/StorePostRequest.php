@@ -47,7 +47,7 @@ class StorePostRequest extends FormRequest
             'used_technologies.max' => 'Questo campo deve contenre massimo :max caratteri',
             'link.required' => ' Devi inserire il link del progetto',
             'link.max' => 'Il link deve contenre massimo :max caratteri',
-
+            'type_id.exists' => 'ehi',
         ];
      }
 }
