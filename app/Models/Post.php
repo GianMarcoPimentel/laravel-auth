@@ -17,6 +17,7 @@ class Post extends Model
         'src',
         'used_technologies',
         'link',
+        'type_id',
     ];
 
     //aggiungo la lettura delle tabella collegata
