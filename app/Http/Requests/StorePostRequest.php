@@ -28,7 +28,7 @@ class StorePostRequest extends FormRequest
             'src' => 'file|required|max:1024|mimes:jpg,png,bmp',
             'used_technologies' => 'required|max:255',
             'link' => 'required|max:1000',
-            'type_id' => 'nullable'
+            'type_id' => 'nullable|exists:types,id'
                         
         ];
     }

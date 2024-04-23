@@ -5,10 +5,7 @@
 
     
 
-    <h1>
-      {{-- @dump($post->type) --}}
-      {{$post->type->title}}
-    </h1>
+    
 
     <div class="card" style="width: 100%;">
         <img src="{{asset('storage/' . $post->src)}}" class="card-img-top" alt="Progetto : {{$post->id}}">
@@ -18,7 +15,7 @@
           <p class="card-text">Di cosa tratta: {{$post->description}}</p>
           <p class="card-text">Tecnologie usate: {{$post->used_technologies}}</p>
           <p>Per visualizzare il progetto : <a href="#" class="btn btn-success">{{$post->link}}</a></p>
-        
+          <p>Tipologia : {{$post->type?->title}}</p>
         </div>
       
       </div>
