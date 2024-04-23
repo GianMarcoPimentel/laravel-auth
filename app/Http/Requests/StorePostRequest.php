@@ -25,7 +25,7 @@ class StorePostRequest extends FormRequest
             //
             'name' => 'required|max:255',
             'description' => 'required|max:2000',
-            'src' => 'file|required|max:1024|mimes:jpg,png,bmp',
+            'src' => 'file|max:1024|mimes:jpg,png,bmp',
             'used_technologies' => 'required|max:255',
             'link' => 'required|max:1000',
             'type_id' => 'nullable|exists:types,id'

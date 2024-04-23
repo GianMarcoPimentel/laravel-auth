@@ -77,11 +77,11 @@
 
             @foreach ($types as $type)
 
-            <option value="{{$type->id}}">{{$type->title}}</option>
+            <option value="{{$type->id}}" {{ $type->id == old('type_id') ? 'selected' : '' }}>{{$type->title}}</option>
                 
             @endforeach
           </select>
-          
+
         </div>
 
         <button type="submit" class="btn btn-primary">Aggiungi Progetto</button>
