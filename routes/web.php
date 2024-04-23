@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +52,11 @@ Route::middleware(['auth', 'verified'])
             Route::get('/', [DashboardController::class, 'index'])->name('index');
             Route::get('/users', [DashboardController::class, 'users'])->name('users');
 
+            //rotte di risorsa per i posts
             Route::resource('posts', PostController::class);
+
+            //rotte di risorsa per i types
+            Route::resource('types', TypeController::class);
         }
 );
 
