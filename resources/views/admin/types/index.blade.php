@@ -10,6 +10,8 @@
             <th scope="col">#</th>
             <th scope="col">Nome della tipologia</th>
             <th scope="col">Descrizione</th>
+            <th scope="col"></th>
+            
             
             
             
@@ -23,8 +25,9 @@
 
                 <th scope="row">{{$loop->index + 1}}</th>
                 <td>{{$type->title}}</td>
-{{--                 <td><a href="{{ route('admin.types.show', $type->id )}}" class="btn btn-light ">Mostra Progetto</a></td>
- --}}
+                <td>{{$type->descriptiom}}</td>
+                <td><a href="{{ route('admin.types.show', $type->id )}}" class="btn btn-light ">Mostra Progetto</a></td>
+
                 
   
                 </tr>
