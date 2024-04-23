@@ -76,7 +76,7 @@
           <select name="type_id" id="type_id">
 
             @foreach ($types as $type)
-
+            <option value="">#</option>
             <option value="{{$type->id}}" {{ $type->id == old('type_id') ? 'selected' : '' }}>{{$type->title}}</option>
                 
             @endforeach

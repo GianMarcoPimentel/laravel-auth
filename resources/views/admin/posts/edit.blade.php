@@ -29,6 +29,7 @@
 
     
     <div class="mb-3">
+      
       <label for="description" class="form-label">Descrizione</label>
       <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name=" description">{{old('description') ?? $post->description}}"</textarea>
     </div>
@@ -40,8 +41,10 @@
 
     
     <div class="mb-3 ">
+      <img src="{{asset('storage/' . $post->src)}}" class="card-img-top" alt="Progetto : {{$post->id}}">
+
       <label class="form-label" for="src">Immagine</label>
-      <input type="file" class="form-control @error('src') is-invalid @enderror" id="src" name=" src" value="{{old('src') ?? $post->src}}">
+      <input type="file" class="form-control @error('src') is-invalid @enderror" id="src" name=" src" value="{{old('src') ?? $post->src}}" >
     </div>
     @error('src')
     <div class="alert alert-danger">
@@ -78,7 +81,7 @@
       <select name="type_id" id="type_id">
 
         @foreach ($types as $type)
-
+       
         <option value="{{$type->id}}" {{ $type->id == $post->type_id ? 'selected' : '' }}>
           {{$type->title}}
         </option>
