@@ -5,7 +5,10 @@
 
     
 
-    <h1></h1>
+    <h1>
+      {{-- @dump($post->type) --}}
+      {{$post->type->title}}
+    </h1>
 
     <div class="card" style="width: 100%;">
         <img src="{{asset('storage/' . $post->src)}}" class="card-img-top" alt="Progetto : {{$post->id}}">

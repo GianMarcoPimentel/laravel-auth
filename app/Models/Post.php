@@ -18,4 +18,11 @@ class Post extends Model
         'used_technologies',
         'link',
     ];
+
+    //aggiungo la lettura delle tabella collegata
+
+    //il progeto corrisponde a una sola categoria
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
