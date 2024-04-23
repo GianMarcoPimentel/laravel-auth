@@ -71,6 +71,22 @@
     </div>
     @enderror
 
+
+    <div class="mb-3 ">
+      <label class="form-label" for="type_id">Tipologia</label>
+
+      <select name="type_id" id="type_id">
+
+        @foreach ($types as $type)
+
+        <option value="{{$type->id}}">{{$type->title}}</option>
+            
+        @endforeach
+      </select>
+      
+    </div>
+    
+
     <button type="submit" class="btn btn-primary">Salva</button>
   </form>
 </div>
